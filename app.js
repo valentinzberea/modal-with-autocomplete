@@ -5,16 +5,16 @@ require.config({
         'modules': '../app/modules',
         'templates': '../app/templates'
     },
-    shim : {
-        jquery : {
-            exports : '$'
+    shim: {
+        jquery: {
+            exports: '$'
         },
-        underscore : {
-            exports : '_'
+        underscore: {
+            exports: '_'
         },
-        backbone : {
-            deps : ['jquery', 'underscore'],
-            exports : 'Backbone'
+        backbone: {
+            deps: ['jquery', 'underscore'],
+            exports: 'Backbone'
         },
         'backbone.marionette' : {
             deps : ['jquery', 'underscore', 'backbone'],
