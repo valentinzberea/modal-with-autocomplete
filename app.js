@@ -16,19 +16,27 @@ require.config({
             deps: ['jquery', 'underscore'],
             exports: 'Backbone'
         },
-        'backbone.marionette' : {
-            deps : ['jquery', 'underscore', 'backbone'],
-            exports : 'Marionette'
+        'backbone.marionette': {
+            deps: ['backbone'],
+            exports: 'Marionette'
+        },
+        'backbone.marionette.handlebars': {
+            deps: ['backbone.marionette'],
+            exports: 'Marionette'
+        },
+        'bootstrap': {
+            deps: ['jquery'],
+            exports: '$.fn.popover'
         }
     },
+    deps: ['backbone.marionette.handlebars'],
+    enforceDefine: true,
     hbs: {
         disableI18n: true,
         templateExtension: 'handlebars'
     }});
 
 // Start the main app logic.
-requirejs(['cs',
-        'hbs',
-        'backbone.marionette.handlebars'], function() {
+define(['cs','hbs'], function() {
     require(['cs!app/main']);
 });
